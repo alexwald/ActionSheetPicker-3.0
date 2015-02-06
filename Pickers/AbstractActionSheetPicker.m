@@ -633,8 +633,9 @@ CG_INLINE BOOL isIPhone4()
     NSParameterAssert(popover != NULL);
     if ( self.barButtonItem )
     {
-        [popover presentPopoverFromBarButtonItem:_barButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny
-                                        animated:YES];
+        // [popover presentPopoverFromBarButtonItem:_barButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny
+        //                                 animated:YES];
+        [popover presentPopoverFromRect:CGRectMake(_containerView.frame.size.width / 2.f, 0.f, 0, 0) inView:_containerView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         return;
     }
     else if ( (self.containerView) )
